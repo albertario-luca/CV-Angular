@@ -8,4 +8,10 @@ import { Navbar } from './layout/navbar/navbar';
   imports: [RouterOutlet, Navbar],
   templateUrl: './app.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  isDark = false;
+
+  toggleDark() {
+    this.isDark = !this.isDark;
+  }
+}

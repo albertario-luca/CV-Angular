@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
-  templateUrl: './contact.html',
-  styleUrl: './contact.css',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './contact.html'
 })
 export class Contact {
 
+  form = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  submit() {
+    console.log(this.form);
+    alert('Messaggio pronto (qui puoi collegare mailto o servizio esterno)');
+  }
 }

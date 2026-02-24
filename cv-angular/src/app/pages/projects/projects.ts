@@ -1,18 +1,33 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  link?: string;
+};
+
 @Component({
-  standalone: true,
   selector: 'app-projects',
-  templateUrl: './projects.html',
-  imports: [CommonModule]
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './projects.html'
 })
 export class Projects {
-  projects = [
+
+  projects: Project[] = [
     {
       title: 'CV Angular',
-      desc: 'Curriculum online responsive',
+      description: 'Curriculum online responsive e navigabile',
+      tech: ['Angular', 'Bootstrap'],
       link: '#'
+    },
+    {
+      title: 'App Android',
+      description: 'Applicazione Android sviluppata in Java',
+      tech: ['Java', 'Android Studio']
     }
   ];
+
 }

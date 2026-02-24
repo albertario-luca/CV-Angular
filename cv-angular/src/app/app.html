@@ -1,2 +1,5 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<app-navbar [dark]="isDark" (toggle)="toggleDark()"></app-navbar>
+
+<div [class.dark-mode]="isDark">
+    <router-outlet></router-outlet>
+</div>
