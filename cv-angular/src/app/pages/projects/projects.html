@@ -1,0 +1,13 @@
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4" *ngFor="let project of projects">
+            <div class="card h-100 shadow">
+                <div class="card-body">
+                    <h5>{{ project.title }}</h5>
+                    <p>{{ project.desc }}</p>
+                    <a [href]="project.link" class="btn btn-outline-dark">Live</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
