@@ -15,8 +15,4 @@ export class Contact {
     message: ''
   };
 
-  submit() {
-    console.log(this.form);
-    alert('Messaggio pronto (qui puoi collegare mailto o servizio esterno)');
-  }
 }
