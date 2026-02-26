@@ -1,40 +1,78 @@
-<section class="vh-100 d-flex align-items-center bg-light">
-    <div class="container">
-        <div class="row align-items-center">
+<section id="home" class="min-vh-100 d-flex align-items-center position-relative overflow-hidden hero-section">
 
-            <div class="col-md-7">
-                <h1 class="display-4 fw-bold">
-                    Full-Stack Developer
+    <!-- Background -->
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+
+    <div class="container position-relative z-3">
+        <div class="row align-items-center g-5">
+
+            <!-- Colonna Sinistra -->
+            <div class="col-lg-7">
+                <div class="mb-4">
+                    <span class="badge bg-primary px-4 py-2 fs-6 rounded-pill">Junior Full-Stack Developer</span>
+                </div>
+
+                <h1 class="display-2 fw-bold mb-3">
+                    <span class="text-white">Ciao, sono</span>
+                    <span class="typing-wrapper text-primary">
+                        <span class="typing" id="typing-name">Luca Albertario</span>
+                    </span>
                 </h1>
 
-                <p class="lead text-muted my-4">
-                    Sviluppo applicazioni moderne con Angular, Java e attenzione maniacale alla UI.
+                <p class="lead text-light opacity-90 fs-4 mb-5" style="max-width: 540px;">
+                    Junior Full-Stack Developer con esperienza nello sviluppo end-to-end di applicazioni web
+                    con <strong>Angular</strong>, <strong>Spring Boot</strong> e <strong>MySQL</strong>.
                 </p>
 
-                <div class="d-flex gap-3">
-                    <a routerLink="/projects" class="btn btn-dark btn-lg">
-                        Vedi i progetti
+                <!-- Buttons -->
+                <div class="d-flex flex-wrap gap-3">
+                    <a routerLink="/projects" class="btn btn-primary btn-lg px-5 py-3 fw-semibold">
+                        <i class="bi bi-briefcase-fill me-2"></i>Vedi i miei progetti
                     </a>
 
-                    <a routerLink="/contact" class="btn btn-outline-dark btn-lg">
+                    <a href="assets/Albertario_Luca_CV.pdf" download="Luca_Albertario_CV.pdf"
+                        class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
+                        <i class="bi bi-download me-2"></i>Scarica CV
+                    </a>
+
+                    <a routerLink="/contact" class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
                         Contattami
                     </a>
                 </div>
+
+                <!-- Tech Stack -->
+                <div class="mt-5">
+                    <p class="text-light opacity-75 mb-3 small">Principali tecnologie</p>
+                    <div class="tech-stack d-flex flex-wrap gap-2">
+                        <span class="badge bg-white text-dark">Angular</span>
+                        <span class="badge bg-white text-dark">Spring Boot</span>
+                        <span class="badge bg-white text-dark">Java</span>
+                        <span class="badge bg-white text-dark">MySQL</span>
+                        <span class="badge bg-white text-dark">TypeScript</span>
+                        <span class="badge bg-white text-dark">Android</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-5 text-center d-none d-md-block">
-                <div class="position-relative mx-auto" style="width: 250px; height: 250px;">
+            <!-- Colonna Destra - Foto -->
+            <div class="col-lg-5 text-center">
+                <div class="profile-container mx-auto">
+                    <div class="glow-ring"></div>
+                    <img src="assets/profile.jpg" alt="Luca Albertario" class="profile-img">
 
-                    <!-- background -->
-                    <div class="bg-dark rounded-circle position-absolute top-0 start-0 w-100 h-100">
+                    <div class="status-badge">
+                        <div class="pulse-dot"></div>
+                        Disponibile
                     </div>
-
-                    <!-- image -->
-                    <img src="assets/profile.jpg" alt="Foto profilo" class="rounded-circle position-relative"
-                        style="width: 100%; height: 100%; object-fit: cover;" />
-
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span>Scorri per scoprire</span>
+        <i class="bi bi-chevron-down"></i>
     </div>
 </section>
