@@ -1,5 +1,9 @@
 .hero-section {
     background: #0a0a0a;
+    min-height: 100dvh;
+    padding-top: 80px;    /* offset navbar */
+    padding-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 .hero-bg {
@@ -14,11 +18,11 @@
     background: radial-gradient(circle at 40% 30%, rgba(59, 130, 246, 0.22) 0%, transparent 65%);
 }
 
-/* Foto Profilo centrata meglio */
+/* Foto Profilo */
 .profile-container {
     position: relative;
-    width: 290px;
-    height: 290px;
+    width: 180px;
+    height: 180px;
     margin: 0 auto;
 }
 
@@ -52,7 +56,7 @@
     to   { opacity: 0.85; }
 }
 
-/* Badge Disponibile minimale */
+/* Badge Disponibile */
 .status-badge {
     position: absolute;
     bottom: 12px;
@@ -82,7 +86,7 @@
     50% { transform: scale(1.5); }
 }
 
-/* Tech Stack - ora ben visibili */
+/* Tech Stack */
 .tech-stack .badge {
     font-size: 0.95rem;
     padding: 9px 16px;
@@ -144,4 +148,341 @@
 
 .card-text {
     color: #cbd5e1;
+}
+
+.tech-icon {
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+.tech-icon:hover {
+    transform: translateY(-4px);
+}
+
+.tech-icon i {
+    transition: color 0.3s ease;
+}
+
+.tech-icon:hover i {
+    color: #3b82f6;
+}
+
+.tech-icon span {
+    font-size: 0.85rem;
+}
+
+/* ── Tech Band ─────────────────────────────────────────── */
+.tech-band {
+    padding-bottom: 1rem;
+}
+
+.tech-band-label {
+    letter-spacing: 0.15em;
+}
+
+.tech-track-wrapper {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.tech-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+}
+
+.tech-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ── Tech Pill ─────────────────────────────────────────── */
+.tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(6px);
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    cursor: default;
+}
+
+.tech-pill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.tech-pill img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.tech-pill .flask-icon {
+    filter: invert(1);
+}
+
+.tech-pill span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.hero-section {
+    background: #0a0a0a;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 40% 30%, rgba(59, 130, 246, 0.22) 0%, transparent 65%);
+}
+
+/* Foto Profilo */
+.profile-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid rgba(255,255,255,0.2);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);
+    transition: all 0.4s ease;
+}
+
+.profile-container:hover .profile-img {
+    transform: scale(1.05);
+    border-color: #3b82f6;
+}
+
+/* Glow più elegante */
+.glow-ring {
+    position: absolute;
+    inset: -35px;
+    background: radial-gradient(circle, rgba(59,130,246,0.45) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow 6s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes glow {
+    from { opacity: 0.5; }
+    to   { opacity: 0.85; }
+}
+
+/* Badge Disponibile */
+.status-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(16, 185, 129, 0.95);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.pulse-dot {
+    width: 9px;
+    height: 9px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+/* Tech Stack */
+.tech-stack .badge {
+    font-size: 0.95rem;
+    padding: 9px 16px;
+    font-weight: 500;
+}
+
+/* === TYPING EFFECT === */
+.typing-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.typing {
+    position: relative;
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.typing::after {
+    content: '|';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+    color: #3b82f6;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.project-card {
+    transition: all 0.4s ease;
+    background: #1a1a2e;
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.08);
+}
+
+.card-body {
+    background: #1a1a2e;
+}
+
+.card-title {
+    color: #ffffff;
+}
+
+.card-text {
+    color: #cbd5e1;
+}
+
+.tech-icon {
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+.tech-icon:hover {
+    transform: translateY(-4px);
+}
+
+.tech-icon i {
+    transition: color 0.3s ease;
+}
+
+.tech-icon:hover i {
+    color: #3b82f6;
+}
+
+.tech-icon span {
+    font-size: 0.85rem;
+}
+
+/* ── Tech Band ─────────────────────────────────────────── */
+.tech-band {
+    padding-bottom: 1rem;
+}
+
+.tech-band-label {
+    letter-spacing: 0.15em;
+}
+
+.tech-track-wrapper {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.tech-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+}
+
+.tech-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ── Tech Pill ─────────────────────────────────────────── */
+.tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(6px);
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    cursor: default;
+}
+
+.tech-pill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.tech-pill img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.tech-pill .flask-icon {
+    filter: invert(1);
+}
+
+.tech-pill span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Scroll indicator rimosso */
+.scroll-indicator {
+    display: none !important;
 }

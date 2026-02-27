@@ -1,78 +1,146 @@
-<section id="home" class="min-vh-100 d-flex align-items-center position-relative overflow-hidden hero-section">
+<section id="home"
+    class="d-flex flex-column align-items-center justify-content-center position-relative overflow-hidden hero-section">
 
     <!-- Background -->
     <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
 
     <div class="container position-relative z-3">
-        <div class="row align-items-center g-5">
 
-            <!-- Colonna Sinistra -->
-            <div class="col-lg-7">
-                <div class="mb-4">
+        <!-- Layout centrato: foto + testo in colonna -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7 text-center">
+
+                <!-- Badge -->
+                <div class="mb-3">
                     <span class="badge bg-primary px-4 py-2 fs-6 rounded-pill">Junior Full-Stack Developer</span>
                 </div>
 
-                <h1 class="display-2 fw-bold mb-3">
-                    <span class="text-white">Ciao, sono</span>
-                    <span class="typing-wrapper text-primary">
-                        <span class="typing" id="typing-name">Luca Albertario</span>
-                    </span>
-                </h1>
-
-                <p class="lead text-light opacity-90 fs-4 mb-5" style="max-width: 540px;">
-                    Junior Full-Stack Developer con esperienza nello sviluppo end-to-end di applicazioni web
-                    con <strong>Angular</strong>, <strong>Spring Boot</strong> e <strong>MySQL</strong>.
-                </p>
-
-                <!-- Buttons -->
-                <div class="d-flex flex-wrap gap-3">
-                    <a routerLink="/projects" class="btn btn-primary btn-lg px-5 py-3 fw-semibold">
-                        <i class="bi bi-briefcase-fill me-2"></i>Vedi i miei progetti
-                    </a>
-
-                    <a href="assets/Albertario_Luca_CV.pdf" download="Luca_Albertario_CV.pdf"
-                        class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
-                        <i class="bi bi-download me-2"></i>Scarica CV
-                    </a>
-
-                    <a routerLink="/contact" class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
-                        Contattami
-                    </a>
-                </div>
-
-                <!-- Tech Stack -->
-                <div class="mt-5">
-                    <p class="text-light opacity-75 mb-3 small">Principali tecnologie</p>
-                    <div class="tech-stack d-flex flex-wrap gap-2">
-                        <span class="badge bg-white text-dark">Angular</span>
-                        <span class="badge bg-white text-dark">Spring Boot</span>
-                        <span class="badge bg-white text-dark">Java</span>
-                        <span class="badge bg-white text-dark">MySQL</span>
-                        <span class="badge bg-white text-dark">TypeScript</span>
-                        <span class="badge bg-white text-dark">Android</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Colonna Destra - Foto -->
-            <div class="col-lg-5 text-center">
-                <div class="profile-container mx-auto">
+                <!-- Foto profilo centrata -->
+                <div class="profile-container mx-auto mb-3">
                     <div class="glow-ring"></div>
                     <img src="assets/profile.jpg" alt="Luca Albertario" class="profile-img">
-
                     <div class="status-badge">
                         <div class="pulse-dot"></div>
                         Disponibile
                     </div>
                 </div>
+
+                <!-- Titolo -->
+                <h1 class="display-2 fw-bold mb-3">
+                    <span class="text-white">Ciao, sono</span><br>
+                    <span class="typing-wrapper text-primary">
+                        <span class="typing" id="typing-name">Luca Albertario</span>
+                    </span>
+                </h1>
+
+                <!-- Sottotitolo -->
+                <p class="lead text-light opacity-90 fs-5 mb-3 mx-auto" style="max-width: 520px;">
+                    Junior Full-Stack Developer con competenze in sviluppo web e mobile, focus su Angular, Java e Spring
+                    Boot.
+                </p>
+
+                <!-- Buttons -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center mb-3">
+                    <a routerLink="/projects" class="btn btn-primary btn-lg px-5 py-3 fw-semibold">
+                        <i class="bi bi-briefcase-fill me-2"></i>Vedi i miei progetti
+                    </a>
+                    <a href="assets/Albertario_Luca_CV.pdf" download="Luca_Albertario_CV.pdf"
+                        class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
+                        <i class="bi bi-download me-2"></i>Scarica CV
+                    </a>
+                    <a routerLink="/contact" class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
+                        Contattami
+                    </a>
+                </div>
+
+                <!-- Competenze principali -->
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Banda Tecnologie: occupa tutta la larghezza, fuori dal container -->
+    <div class="tech-band w-100 position-relative z-3 mt-3">
+        <div class="tech-band-label text-white-50 small text-center mb-3 fw-semibold text-uppercase ls-2">
+            Tecnologie
+        </div>
+        <div class="tech-track-wrapper">
+            <div class="tech-track">
+
+                <!-- Set 1 -->
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                        alt="Angular">
+                    <span>Angular</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                        alt="Spring Boot">
+                    <span>Spring Boot</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <span>MySQL</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+                        alt="TypeScript">
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android">
+                    <span>Android</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"
+                        class="flask-icon">
+                    <span>Flask</span>
+                </div>
+
+                <!-- Set 2 (clone per loop infinito) -->
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                        alt="Angular">
+                    <span>Angular</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                        alt="Spring Boot">
+                    <span>Spring Boot</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <span>MySQL</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+                        alt="TypeScript">
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android">
+                    <span>Android</span>
+                </div>
+                <div class="tech-pill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"
+                        class="flask-icon">
+                    <span>Flask</span>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-        <span>Scorri per scoprire</span>
-        <i class="bi bi-chevron-down"></i>
-    </div>
+
+
 </section>
