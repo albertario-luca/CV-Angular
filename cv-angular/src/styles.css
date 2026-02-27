@@ -486,3 +486,1166 @@
 .scroll-indicator {
     display: none !important;
 }
+
+/* ── Background coerente con la home ───────────────────── */
+.percorso-section {
+    background: #0a0a0a;
+}
+
+.percorso-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.percorso-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 60% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 65%);
+}
+
+/* ── Timeline struttura ─────────────────────────────────── */
+.timeline {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Linea verticale centrale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(59,130,246,0.5) 10%, rgba(59,130,246,0.5) 90%, transparent);
+    transform: translateX(-50%);
+}
+
+/* ── Timeline item ──────────────────────────────────────── */
+.timeline-item {
+    position: relative;
+    width: 46%;
+    margin-bottom: 48px;
+    animation: fadeSlideIn 0.5s ease both;
+}
+
+.timeline-item.left  { margin-left: 0; margin-right: auto; }
+.timeline-item.right { margin-left: auto; margin-right: 0; }
+
+/* Dot centrale */
+.timeline-dot {
+    position: absolute;
+    top: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #1a1a2e;
+    border: 2px solid #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6;
+    font-size: 1rem;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    z-index: 2;
+}
+
+.timeline-item.left  .timeline-dot { right: -56px; }
+.timeline-item.right .timeline-dot { left: -56px; }
+
+.timeline-item:hover .timeline-dot {
+    background: #3b82f6;
+    color: #fff;
+    box-shadow: 0 0 0 6px rgba(59,130,246,0.25);
+}
+
+/* ── Card ───────────────────────────────────────────────── */
+.timeline-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px 22px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.timeline-item:hover .timeline-card {
+    transform: translateY(-4px);
+    border-color: rgba(59,130,246,0.4);
+    background: rgba(59,130,246,0.06);
+}
+
+/* ── Tag tipo ───────────────────────────────────────────── */
+.timeline-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-bottom: 8px;
+}
+
+.timeline-tag.experience { background: rgba(59,130,246,0.2);  color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
+.timeline-tag.education  { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+.timeline-tag.diploma    { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+
+/* ── Contenuto card ─────────────────────────────────────── */
+.timeline-date {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.timeline-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.97rem;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.timeline-location {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 10px;
+}
+
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px;
+}
+
+.timeline-list li {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.7);
+    padding: 3px 0 3px 14px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.timeline-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-size: 0.7rem;
+    top: 4px;
+}
+
+.timeline-list strong {
+    color: rgba(255,255,255,0.92);
+}
+
+.timeline-eqf {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+/* ── Animazione entrata ─────────────────────────────────── */
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.05s; }
+.timeline-item:nth-child(2) { animation-delay: 0.15s; }
+.timeline-item:nth-child(3) { animation-delay: 0.25s; }
+.timeline-item:nth-child(4) { animation-delay: 0.35s; }
+.timeline-item:nth-child(5) { animation-delay: 0.45s; }
+.timeline-item:nth-child(6) { animation-delay: 0.55s; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .timeline::before { left: 20px; }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+        width: 100%;
+        margin-left: 52px;
+        padding-left: 0;
+    }
+
+    .timeline-item.left  .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: -52px;
+        right: auto;
+    }
+}
+
+/* ── Background coerente con la home ───────────────────── */
+.percorso-section {
+    background: #0a0a0a;
+    padding-top: 100px;   /* offset navbar (80px) + respiro visivo */
+    padding-bottom: 80px;
+}
+
+.percorso-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.percorso-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 60% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 65%);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.percorso-header {
+    margin-bottom: 64px;
+}
+
+/* ── Timeline struttura ─────────────────────────────────── */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Linea verticale centrale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(59,130,246,0.5) 5%,
+        rgba(59,130,246,0.5) 95%,
+        transparent
+    );
+    transform: translateX(-50%);
+}
+
+/* ── Timeline item ──────────────────────────────────────── */
+.timeline-item {
+    position: relative;
+    width: 44%;
+    margin-bottom: 56px;
+    animation: fadeSlideIn 0.5s ease both;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item.left  { margin-left: 0; margin-right: auto; }
+.timeline-item.right { margin-left: auto; margin-right: 0; }
+
+/* Dot: centrato verticalmente sulla card */
+.timeline-dot {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #1a1a2e;
+    border: 2px solid #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6;
+    font-size: 1.05rem;
+    box-shadow: 0 0 0 5px rgba(59,130,246,0.12);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    z-index: 2;
+}
+
+.timeline-item.left  .timeline-dot { right: -58px; }
+.timeline-item.right .timeline-dot { left: -58px; }
+
+.timeline-item:hover .timeline-dot {
+    background: #3b82f6;
+    color: #fff;
+    box-shadow: 0 0 0 7px rgba(59,130,246,0.22);
+}
+
+/* ── Card ───────────────────────────────────────────────── */
+.timeline-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    padding: 28px 30px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.timeline-item:hover .timeline-card {
+    transform: translateY(-4px);
+    border-color: rgba(59,130,246,0.4);
+    background: rgba(59,130,246,0.07);
+}
+
+/* ── Tag tipo ───────────────────────────────────────────── */
+.timeline-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.timeline-tag.experience { background: rgba(59,130,246,0.2);  color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
+.timeline-tag.education  { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+.timeline-tag.diploma    { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+
+/* ── Contenuto card ─────────────────────────────────────── */
+.timeline-date {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.timeline-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.timeline-location {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 14px;
+}
+
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px;
+}
+
+.timeline-list li {
+    font-size: 0.87rem;
+    color: rgba(255,255,255,0.72);
+    padding: 4px 0 4px 18px;
+    position: relative;
+    line-height: 1.55;
+}
+
+.timeline-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-size: 0.7rem;
+    top: 6px;
+}
+
+.timeline-list strong {
+    color: rgba(255,255,255,0.93);
+}
+
+.timeline-eqf {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+/* ── Animazione entrata ─────────────────────────────────── */
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.05s; }
+.timeline-item:nth-child(2) { animation-delay: 0.15s; }
+.timeline-item:nth-child(3) { animation-delay: 0.25s; }
+.timeline-item:nth-child(4) { animation-delay: 0.35s; }
+.timeline-item:nth-child(5) { animation-delay: 0.45s; }
+.timeline-item:nth-child(6) { animation-delay: 0.55s; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .percorso-section {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+
+    .timeline::before { left: 22px; }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+        width: 100%;
+        margin-left: 58px;
+        padding-left: 0;
+    }
+
+    .timeline-item.left  .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: -58px;
+        right: auto;
+        top: 28px;
+        transform: none;
+    }
+}
+
+/* ── Background coerente con home/percorso ─────────────── */
+.progetti-section {
+    background: #0a0a0a;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.progetti-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.progetti-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 60%, rgba(59, 130, 246, 0.10) 0%, transparent 65%);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.progetti-header {
+    margin-bottom: 56px;
+}
+
+/* ── Card ───────────────────────────────────────────────── */
+.project-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    animation: fadeSlideIn 0.5s ease both;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59,130,246,0.4);
+    background: rgba(59,130,246,0.06);
+}
+
+/* ── Immagine ───────────────────────────────────────────── */
+.project-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.06);
+}
+
+.project-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(10,10,10,0.75) 100%);
+}
+
+/* ── Badge tipo (in alto sull'immagine) ─────────────────── */
+.project-badges-top {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+
+.project-tag-type {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.type-fullstack { background: rgba(59,130,246,0.25);  color: #93c5fd; border: 1px solid rgba(59,130,246,0.35); }
+.type-mobile    { background: rgba(16,185,129,0.20);  color: #6ee7b7; border: 1px solid rgba(16,185,129,0.35); }
+.type-web       { background: rgba(139,92,246,0.20);  color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35); }
+.type-research  { background: rgba(245,158,11,0.18);  color: #fcd34d; border: 1px solid rgba(245,158,11,0.35); }
+
+/* ── Body card ──────────────────────────────────────────── */
+.project-body {
+    padding: 24px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.project-desc {
+    font-size: 0.87rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+/* ── Tech badges ────────────────────────────────────────── */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: rgba(59,130,246,0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+/* ── Bottone ────────────────────────────────────────────── */
+.project-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.05);
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    margin-top: auto;
+}
+
+.project-btn:hover {
+    background: rgba(59,130,246,0.2);
+    border-color: rgba(59,130,246,0.5);
+    color: #fff;
+}
+
+.project-btn-pdf {
+    border-color: rgba(239,68,68,0.3);
+    color: #fca5a5;
+    background: rgba(239,68,68,0.07);
+}
+
+.project-btn-pdf:hover {
+    background: rgba(239,68,68,0.18);
+    border-color: rgba(239,68,68,0.5);
+    color: #fff;
+}
+
+/* ── Animazione ─────────────────────────────────────────── */
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.col-md-6:nth-child(1) .project-card { animation-delay: 0.05s; }
+.col-md-6:nth-child(2) .project-card { animation-delay: 0.12s; }
+.col-md-6:nth-child(3) .project-card { animation-delay: 0.19s; }
+.col-md-6:nth-child(4) .project-card { animation-delay: 0.26s; }
+.col-md-6:nth-child(5) .project-card { animation-delay: 0.33s; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .progetti-section {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+}
+
+/* ── Background coerente ────────────────────────────────── */
+.contatti-section {
+    background: #0a0a0a;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.contatti-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.contatti-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(59, 130, 246, 0.11) 0%, transparent 65%);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.contatti-header {
+    margin-bottom: 52px;
+}
+
+/* ── Form card ──────────────────────────────────────────── */
+.contatti-card {
+    max-width: 560px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 40px 44px;
+    backdrop-filter: blur(8px);
+}
+
+/* ── Field ──────────────────────────────────────────────── */
+.contatti-field {
+    margin-bottom: 24px;
+}
+
+.contatti-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.contatti-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 13px 16px;
+    color: #fff;
+    font-size: 0.93rem;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    resize: none;
+    font-family: inherit;
+}
+
+.contatti-input::placeholder {
+    color: rgba(255,255,255,0.25);
+}
+
+.contatti-input:focus {
+    border-color: rgba(59,130,246,0.6);
+    background: rgba(59,130,246,0.06);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+.contatti-textarea {
+    min-height: 140px;
+}
+
+/* ── Bottone ────────────────────────────────────────────── */
+.contatti-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(59,130,246,0.4);
+    background: rgba(59,130,246,0.18);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    margin-top: 8px;
+}
+
+.contatti-btn:hover {
+    background: rgba(59,130,246,0.35);
+    border-color: rgba(59,130,246,0.7);
+    transform: translateY(-2px);
+}
+
+.contatti-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .contatti-section {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+
+    .contatti-card {
+        padding: 28px 22px;
+    }
+}
+
+/* ── Background coerente ────────────────────────────────── */
+.contatti-section {
+    background: #0a0a0a;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.contatti-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.contatti-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(59, 130, 246, 0.11) 0%, transparent 65%);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.contatti-header {
+    margin-bottom: 52px;
+}
+
+/* ── Form card ──────────────────────────────────────────── */
+.contatti-card {
+    max-width: 560px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 40px 44px;
+    backdrop-filter: blur(8px);
+}
+
+/* ── Field ──────────────────────────────────────────────── */
+.contatti-field {
+    margin-bottom: 24px;
+}
+
+.contatti-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.contatti-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 13px 16px;
+    color: #fff;
+    font-size: 0.93rem;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    resize: none;
+    font-family: inherit;
+}
+
+.contatti-input::placeholder {
+    color: rgba(255,255,255,0.25);
+}
+
+.contatti-input:focus {
+    border-color: rgba(59,130,246,0.6);
+    background: rgba(59,130,246,0.06);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+.contatti-textarea {
+    min-height: 140px;
+}
+
+/* ── Bottone ────────────────────────────────────────────── */
+.contatti-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(59,130,246,0.4);
+    background: rgba(59,130,246,0.18);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    margin-top: 8px;
+}
+
+.contatti-btn:hover {
+    background: rgba(59,130,246,0.35);
+    border-color: rgba(59,130,246,0.7);
+    transform: translateY(-2px);
+}
+
+.contatti-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .contatti-section {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+
+    .contatti-card {
+        padding: 28px 22px;
+    }
+}
+
+/* ── Navbar base ────────────────────────────────────────── */
+.site-navbar {
+    background: rgba(10, 10, 10, 0.75) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 14px 0;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Brand ──────────────────────────────────────────────── */
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff !important;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+}
+
+.site-brand:hover {
+    opacity: 0.85;
+}
+
+.brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.7);
+    flex-shrink: 0;
+}
+
+/* ── Nav links ──────────────────────────────────────────── */
+.site-link {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 6px 14px !important;
+    border-radius: 8px;
+    transition: color 0.2s ease, background 0.2s ease;
+    position: relative;
+}
+
+.site-link:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.site-link.active {
+    color: #fff !important;
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.site-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: #3b82f6;
+}
+
+/* ── Theme toggle ───────────────────────────────────────── */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.theme-icon {
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+/* ── Mobile toggler custom ──────────────────────────────── */
+.site-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.site-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.toggler-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 2px;
+    transition: background 0.2s ease;
+}
+
+.site-toggler:hover .toggler-bar {
+    background: #fff;
+}
+
+/* ── Mobile menu ────────────────────────────────────────── */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(15, 15, 30, 0.97);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        margin-top: 12px;
+        padding: 16px;
+    }
+
+    .site-link {
+        padding: 10px 14px !important;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .navbar-nav {
+        gap: 4px !important;
+    }
+}
+
+/* ── Background coerente ────────────────────────────────── */
+.contatti-section {
+    background: #0a0a0a;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.contatti-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.contatti-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(59, 130, 246, 0.11) 0%, transparent 65%);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.contatti-header {
+    margin-bottom: 52px;
+}
+
+/* ── Form card ──────────────────────────────────────────── */
+.contatti-card {
+    max-width: 560px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 40px 44px;
+    backdrop-filter: blur(8px);
+}
+
+/* ── Field ──────────────────────────────────────────────── */
+.contatti-field {
+    margin-bottom: 24px;
+}
+
+.contatti-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.contatti-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 13px 16px;
+    color: #fff;
+    font-size: 0.93rem;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    resize: none;
+    font-family: inherit;
+}
+
+.contatti-input::placeholder {
+    color: rgba(255,255,255,0.25);
+}
+
+.contatti-input:focus {
+    border-color: rgba(59,130,246,0.6);
+    background: rgba(59,130,246,0.06);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+.contatti-textarea {
+    min-height: 140px;
+}
+
+/* ── Bottone ────────────────────────────────────────────── */
+.contatti-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(59,130,246,0.4);
+    background: rgba(59,130,246,0.18);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    margin-top: 8px;
+}
+
+.contatti-btn:hover {
+    background: rgba(59,130,246,0.35);
+    border-color: rgba(59,130,246,0.7);
+    transform: translateY(-2px);
+}
+
+.contatti-btn:active {
+    transform: translateY(0);
+}
+
+.contatti-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Feedback ───────────────────────────────────────────── */
+.contatti-feedback {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.contatti-feedback.success {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #6ee7b7;
+}
+
+.contatti-feedback.error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+/* ── Spinner ────────────────────────────────────────────── */
+.contatti-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .contatti-section {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+
+    .contatti-card {
+        padding: 28px 22px;
+    }
+}

@@ -1,124 +1,161 @@
-<div class="container py-5">
-    <h2 class="fw-bold mb-5 text-center text-white">Progetti</h2>
+<section id="progetti" class="progetti-section position-relative overflow-hidden">
 
-    <div class="row g-4">
+    <!-- Stesso background della home/percorso -->
+    <div class="progetti-bg"></div>
+    <div class="progetti-gradient"></div>
 
-        <!-- 1. Lipari Risiko - Full Stack -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 bg-dark border-0 overflow-hidden project-card">
-                <img src="https://picsum.photos/id/1015/1200/630" class="card-img-top" alt="LIPARI RISIKO"
-                    style="height: 220px; object-fit: cover;">
-                <div class="card-body d-flex flex-column p-4">
-                    <h5 class="card-title fw-semibold text-white">Business Game "LIPARI RISIKO" Full Stack</h5>
-                    <p class="card-text text-light opacity-75 flex-grow-1">
-                        Sviluppo completo full-stack con Angular e Spring Boot, integrazione MySQL e CRUD.
-                    </p>
-                    <div class="mb-4">
-                        <span class="badge bg-primary text-white me-1">Angular</span>
-                        <span class="badge bg-primary text-white me-1">Spring Boot</span>
-                        <span class="badge bg-primary text-white">MySQL</span>
-                    </div>
-                    <a href="https://github.com/lukeulele-99/FE-RisikoLipari" target="_blank"
-                        class="btn btn-outline-light d-flex align-items-center justify-content-center gap-2 mt-auto">
-                        <i class="bi bi-github"></i>
-                        Vedi Repository
-                    </a>
-                </div>
-            </div>
+    <div class="container position-relative z-3">
+
+        <!-- Header sezione -->
+        <div class="text-center progetti-header">
+            <span class="badge bg-primary px-4 py-2 fs-6 rounded-pill mb-3 d-inline-block">I miei lavori</span>
+            <h2 class="display-5 fw-bold text-white">Progetti</h2>
+            <p class="text-light opacity-75 mt-2" style="max-width: 480px; margin: 0 auto;">
+                Applicazioni web, mobile e analisi strategiche sviluppate durante il percorso formativo e professionale.
+            </p>
         </div>
 
-        <!-- 2. Crickle - App Android -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 bg-dark border-0 overflow-hidden project-card">
-                <img src="https://picsum.photos/id/237/1200/630" class="card-img-top" alt="Crickle"
-                    style="height: 220px; object-fit: cover;">
-                <div class="card-body d-flex flex-column p-4">
-                    <h5 class="card-title fw-semibold text-white">Crickle - App Toelettatura Animali</h5>
-                    <p class="card-text text-light opacity-75 flex-grow-1">
-                        Applicazione Android nativa per prenotazioni, gestione animali e calendario appuntamenti.
-                    </p>
-                    <div class="mb-4">
-                        <span class="badge bg-primary text-white me-1">Android</span>
-                        <span class="badge bg-primary text-white me-1">Java</span>
-                        <span class="badge bg-primary text-white">Firebase</span>
+        <!-- Grid progetti -->
+        <div class="row g-4">
+
+            <!-- 1. Lipari Risiko -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card h-100">
+                    <div class="project-img-wrapper">
+                        <img src="https://picsum.photos/id/1015/1200/630" class="project-img" alt="LIPARI RISIKO">
+                        <div class="project-img-overlay"></div>
+                        <div class="project-badges-top">
+                            <span class="project-tag-type type-fullstack">Full Stack</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/Tommiconlai/AppPet" target="_blank"
-                        class="btn btn-outline-light d-flex align-items-center justify-content-center gap-2 mt-auto">
-                        <i class="bi bi-github"></i>
-                        Vedi Repository
-                    </a>
+                    <div class="project-body">
+                        <h5 class="project-title">Business Game "LIPARI RISIKO"</h5>
+                        <p class="project-desc">
+                            Sviluppo completo full-stack con Angular e Spring Boot, integrazione MySQL e CRUD
+                            end-to-end.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Angular</span>
+                            <span class="tech-badge">Spring Boot</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                        <a href="https://github.com/lukeulele-99/FE-RisikoLipari" target="_blank" class="project-btn">
+                            <i class="bi bi-github"></i>
+                            Vedi Repository
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 3. CV Angular -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 bg-dark border-0 overflow-hidden project-card">
-                <img src="https://picsum.photos/id/180/1200/630" class="card-img-top" alt="CV Angular"
-                    style="height: 220px; object-fit: cover;">
-                <div class="card-body d-flex flex-column p-4">
-                    <h5 class="card-title fw-semibold text-white">CV Angular - Portfolio Interattivo</h5>
-                    <p class="card-text text-light opacity-75 flex-grow-1">
-                        Curriculum vitae online moderno, responsive e completamente interattivo.
-                    </p>
-                    <div class="mb-4">
-                        <span class="badge bg-primary text-white me-1">Angular</span>
-                        <span class="badge bg-primary text-white">Bootstrap</span>
+            <!-- 2. Crickle -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card h-100">
+                    <div class="project-img-wrapper">
+                        <img src="https://picsum.photos/id/237/1200/630" class="project-img" alt="Crickle">
+                        <div class="project-img-overlay"></div>
+                        <div class="project-badges-top">
+                            <span class="project-tag-type type-mobile">Mobile</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/albertario-luca/CV-Angular" target="_blank"
-                        class="btn btn-outline-light d-flex align-items-center justify-content-center gap-2 mt-auto">
-                        <i class="bi bi-github"></i>
-                        Vedi Repository
-                    </a>
+                    <div class="project-body">
+                        <h5 class="project-title">Crickle — App Toelettatura Animali</h5>
+                        <p class="project-desc">
+                            App Android nativa per prenotazioni, gestione animali e calendario appuntamenti.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Android</span>
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">Firebase</span>
+                        </div>
+                        <a href="https://github.com/Tommiconlai/AppPet" target="_blank" class="project-btn">
+                            <i class="bi bi-github"></i>
+                            Vedi Repository
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 4. Wannenes -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 bg-dark border-0 overflow-hidden project-card">
-                <img src="assets/wannenes.jpg" class="card-img-top" alt="Wannenes"
-                    style="height: 220px; object-fit: cover;">
-                <div class="card-body d-flex flex-column p-4">
-                    <h5 class="card-title fw-semibold text-white">Digital Transformation Website "Wannenes"</h5>
-                    <p class="card-text text-light opacity-75 flex-grow-1">
-                        Analisi competitiva e ottimizzazione UX per la casa d’aste Wannenes.
-                    </p>
-                    <div class="mb-4">
-                        <span class="badge bg-primary text-white me-1">UX Research</span>
-                        <span class="badge bg-primary text-white">Brand Strategy</span>
+            <!-- 3. CV Angular -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card h-100">
+                    <div class="project-img-wrapper">
+                        <img src="https://picsum.photos/id/180/1200/630" class="project-img" alt="CV Angular">
+                        <div class="project-img-overlay"></div>
+                        <div class="project-badges-top">
+                            <span class="project-tag-type type-web">Web</span>
+                        </div>
                     </div>
-                    <a href="assets/wannenes-report.pdf" target="_blank"
-                        class="btn btn-danger d-flex align-items-center justify-content-center gap-2 mt-auto">
-                        <i class="bi bi-file-pdf"></i>
-                        Visualizza PDF
-                    </a>
+                    <div class="project-body">
+                        <h5 class="project-title">CV Angular — Portfolio Interattivo</h5>
+                        <p class="project-desc">
+                            Curriculum vitae online moderno, responsive e completamente interattivo.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Angular</span>
+                            <span class="tech-badge">Bootstrap</span>
+                        </div>
+                        <a href="https://github.com/albertario-luca/CV-Angular" target="_blank" class="project-btn">
+                            <i class="bi bi-github"></i>
+                            Vedi Repository
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 5. Blockbuster -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 bg-dark border-0 overflow-hidden project-card">
-                <img src="assets/ifts.jpg" class="card-img-top" alt="Blockbuster"
-                    style="height: 220px; object-fit: cover;">
-                <div class="card-body d-flex flex-column p-4">
-                    <h5 class="card-title fw-semibold text-white">Digital Transformation Analysis - Blockbuster</h5>
-                    <p class="card-text text-light opacity-75 flex-grow-1">
-                        Analisi strategica del fallimento di Blockbuster e confronto con Netflix.
-                    </p>
-                    <div class="mb-4">
-                        <span class="badge bg-primary text-white me-1">Case Study</span>
-                        <span class="badge bg-primary text-white">Digital Transformation</span>
+            <!-- 4. Wannenes -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card h-100">
+                    <div class="project-img-wrapper">
+                        <img src="assets/wannenes.jpg" class="project-img" alt="Wannenes">
+                        <div class="project-img-overlay"></div>
+                        <div class="project-badges-top">
+                            <span class="project-tag-type type-research">Research</span>
+                        </div>
                     </div>
-                    <a href="assets/blockbuster.pdf" target="_blank"
-                        class="btn btn-danger d-flex align-items-center justify-content-center gap-2 mt-auto">
-                        <i class="bi bi-file-pdf"></i>
-                        Visualizza PDF
-                    </a>
+                    <div class="project-body">
+                        <h5 class="project-title">Digital Transformation — Wannenes</h5>
+                        <p class="project-desc">
+                            Analisi competitiva e ottimizzazione UX per la casa d'aste Wannenes.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">UX Research</span>
+                            <span class="tech-badge">Brand Strategy</span>
+                        </div>
+                        <a href="assets/wannenes-report.pdf" target="_blank" class="project-btn project-btn-pdf">
+                            <i class="bi bi-file-pdf"></i>
+                            Visualizza PDF
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
+            <!-- 5. Blockbuster -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card h-100">
+                    <div class="project-img-wrapper">
+                        <img src="assets/ifts.jpg" class="project-img" alt="Blockbuster">
+                        <div class="project-img-overlay"></div>
+                        <div class="project-badges-top">
+                            <span class="project-tag-type type-research">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h5 class="project-title">Digital Transformation — Blockbuster</h5>
+                        <p class="project-desc">
+                            Analisi strategica del fallimento di Blockbuster e confronto con Netflix.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Case Study</span>
+                            <span class="tech-badge">Digital Transformation</span>
+                        </div>
+                        <a href="assets/blockbuster.pdf" target="_blank" class="project-btn project-btn-pdf">
+                            <i class="bi bi-file-pdf"></i>
+                            Visualizza PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
+</section>

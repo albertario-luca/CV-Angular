@@ -1,18 +1,62 @@
-<div class="container py-5" style="max-width: 600px;">
-    <h2 class="fw-bold mb-4">Contattami</h2>
+<section id="contatti" class="contatti-section position-relative overflow-hidden">
 
-    <form action="https://formspree.io/f/mrearkqg" method="POST">
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" required placeholder="la tua email" />
+    <!-- Stesso background -->
+    <div class="contatti-bg"></div>
+    <div class="contatti-gradient"></div>
+
+    <div class="container position-relative z-3">
+
+        <!-- Header sezione -->
+        <div class="text-center contatti-header">
+            <span class="badge bg-primary px-4 py-2 fs-6 rounded-pill mb-3 d-inline-block">Parliamoci</span>
+            <h2 class="display-5 fw-bold text-white">Contattami</h2>
+            <p class="text-light opacity-75 mt-2" style="max-width: 440px; margin: 0 auto;">
+                Hai un progetto in mente o vuoi semplicemente fare due chiacchiere? Scrivimi.
+            </p>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">Messaggio</label>
-            <textarea name="message" class="form-control" rows="5" required
-                placeholder="Scrivi qui il tuo messaggio..."></textarea>
-        </div>
+        <!-- Form card -->
+        <div class="contatti-card mx-auto">
 
-        <button type="submit" class="btn btn-dark w-100">Invia</button>
-    </form>
-</div>
+            <!-- Stato: successo -->
+            <div *ngIf="success" class="contatti-feedback success">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Messaggio inviato! Ti risponderò al più presto.
+            </div>
+
+            <!-- Stato: errore -->
+            <div *ngIf="error" class="contatti-feedback error">
+                <i class="bi bi-exclamation-circle-fill me-2"></i>
+                Qualcosa è andato storto. Riprova o scrivimi direttamente.
+            </div>
+
+            <!-- Form (nascosto dopo invio riuscito) -->
+            <form *ngIf="!success" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
+                <div class="contatti-field">
+                    <label class="contatti-label">Email</label>
+                    <input type="email" name="email" class="contatti-input" [(ngModel)]="formData.email" required
+                        placeholder="la tua email" />
+                </div>
+
+                <div class="contatti-field">
+                    <label class="contatti-label">Messaggio</label>
+                    <textarea name="message" class="contatti-input contatti-textarea" rows="5"
+                        [(ngModel)]="formData.message" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+                </div>
+
+                <button type="submit" class="contatti-btn" [disabled]="sending">
+                    <span *ngIf="!sending">
+                        <i class="bi bi-send-fill me-2"></i>Invia messaggio
+                    </span>
+                    <span *ngIf="sending">
+                        <span class="contatti-spinner"></span>
+                        Invio in corso...
+                    </span>
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
