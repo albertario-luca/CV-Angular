@@ -1649,3 +1649,255 @@
         padding: 28px 22px;
     }
 }
+/* ── Background coerente ────────────────────────────────── */
+.contatti-section {
+    background: #0a0a0a;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.contatti-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+
+.contatti-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(59, 130, 246, 0.11) 0%, transparent 65%);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.contatti-header {
+    margin-bottom: 52px;
+}
+
+/* ── Form card ──────────────────────────────────────────── */
+.contatti-card {
+    max-width: 560px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 40px 44px;
+    backdrop-filter: blur(8px);
+}
+
+/* ── Field ──────────────────────────────────────────────── */
+.contatti-field {
+    margin-bottom: 24px;
+}
+
+.contatti-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.contatti-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 13px 16px;
+    color: #fff;
+    font-size: 0.93rem;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    resize: none;
+    font-family: inherit;
+}
+
+.contatti-input::placeholder {
+    color: rgba(255,255,255,0.25);
+}
+
+.contatti-input:focus {
+    border-color: rgba(59,130,246,0.6);
+    background: rgba(59,130,246,0.06);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+.contatti-textarea {
+    min-height: 140px;
+}
+
+/* ── Bottone ────────────────────────────────────────────── */
+.contatti-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(59,130,246,0.4);
+    background: rgba(59,130,246,0.18);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    margin-top: 8px;
+}
+
+.contatti-btn:hover {
+    background: rgba(59,130,246,0.35);
+    border-color: rgba(59,130,246,0.7);
+    transform: translateY(-2px);
+}
+
+.contatti-btn:active {
+    transform: translateY(0);
+}
+
+.contatti-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Success screen ─────────────────────────────────────── */
+.contatti-success-screen {
+    text-align: center;
+    padding: 16px 0;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.15);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: #6ee7b7;
+}
+
+.success-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.success-desc {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ── Retry button ───────────────────────────────────────── */
+.retry-btn {
+    background: transparent;
+    border: 1px solid rgba(239,68,68,0.4);
+    color: #fca5a5;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.retry-btn:hover {
+    background: rgba(239,68,68,0.15);
+}
+.contatti-feedback {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.contatti-feedback.success {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #6ee7b7;
+}
+
+.contatti-feedback.error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+/* ── Spinner ────────────────────────────────────────────── */
+.contatti-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .contatti-section {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+
+    .contatti-card {
+        padding: 28px 22px;
+    }
+}
+
+.project-tag-type {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 5px 13px;
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.type-fullstack {
+    background: rgba(59, 130, 246, 0.55);
+    color: #dbeafe;
+    border: 1px solid rgba(59, 130, 246, 0.65);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.type-mobile {
+    background: rgba(16, 185, 129, 0.50);
+    color: #d1fae5;
+    border: 1px solid rgba(16, 185, 129, 0.65);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.type-web {
+    background: rgba(139, 92, 246, 0.50);
+    color: #ede9fe;
+    border: 1px solid rgba(139, 92, 246, 0.65);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.type-research {
+    background: rgba(245, 158, 11, 0.50);
+    color: #fef3c7;
+    border: 1px solid rgba(245, 158, 11, 0.65);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}   

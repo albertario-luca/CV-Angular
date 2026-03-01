@@ -1,3 +1,4 @@
+<!-- contact.html -->
 <section id="contatti" class="contatti-section position-relative overflow-hidden">
 
     <!-- Stesso background -->
@@ -8,7 +9,7 @@
 
         <!-- Header sezione -->
         <div class="text-center contatti-header">
-            <span class="badge bg-primary px-4 py-2 fs-6 rounded-pill mb-3 d-inline-block">Parliamoci</span>
+            <span class="badge bg-primary px-4 py-2 fs-6 rounded-pill mb-3 d-inline-block">Parliamo!</span>
             <h2 class="display-5 fw-bold text-white">Contattami</h2>
             <p class="text-light opacity-75 mt-2" style="max-width: 440px; margin: 0 auto;">
                 Hai un progetto in mente o vuoi semplicemente fare due chiacchiere? Scrivimi.
@@ -18,37 +19,46 @@
         <!-- Form card -->
         <div class="contatti-card mx-auto">
 
-            <!-- Stato: successo -->
-            <div *ngIf="success" class="contatti-feedback success">
-                <i class="bi bi-check-circle-fill me-2"></i>
-                Messaggio inviato! Ti risponderò al più presto.
-            </div>
-
-            <!-- Stato: errore -->
-            <div *ngIf="error" class="contatti-feedback error">
+            <!-- ❌ STATO: ERRORE (sopra al form, form resta visibile per riprovare) -->
+            <div *ngIf="error" class="contatti-feedback error mb-4">
                 <i class="bi bi-exclamation-circle-fill me-2"></i>
-                Qualcosa è andato storto. Riprova o scrivimi direttamente.
+                Qualcosa è andato storto. Riprova.
+                <button class="retry-btn ms-3" (click)="retry()">Riprova</button>
             </div>
 
-            <!-- Form (nascosto dopo invio riuscito) -->
-            <form *ngIf="!success" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <!-- 📝 FORM — sempre visibile -->
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
                 <div class="contatti-field">
                     <label class="contatti-label">Email</label>
-                    <input type="email" name="email" class="contatti-input" [(ngModel)]="formData.email" required
-                        placeholder="la tua email" />
+                    <input type="email" name="email" class="contatti-input" [(ngModel)]="formData.email" required email
+                        placeholder="la tua email" #emailInput="ngModel" />
+                    <!-- Messaggio di errore per email -->
+                    <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)"
+                        class="text-danger mt-1">
+                        <small *ngIf="emailInput.errors?.['required']">L'email è obbligatoria.</small>
+                        <small *ngIf="emailInput.errors?.['email']">Inserisci un'email valida.</small>
+                    </div>
                 </div>
 
                 <div class="contatti-field">
                     <label class="contatti-label">Messaggio</label>
                     <textarea name="message" class="contatti-input contatti-textarea" rows="5"
-                        [(ngModel)]="formData.message" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+                        [(ngModel)]="formData.message" required #messageInput="ngModel"
+                        placeholder="Scrivi qui il tuo messaggio..."></textarea>
+                    <!-- Messaggio di errore per messaggio -->
+                    <div *ngIf="messageInput.invalid && (messageInput.dirty || messageInput.touched)"
+                        class="text-danger mt-1">
+                        <small *ngIf="messageInput.errors?.['required']">Il messaggio è obbligatorio.</small>
+                    </div>
                 </div>
 
                 <button type="submit" class="contatti-btn" [disabled]="sending">
+                    <!-- idle -->
                     <span *ngIf="!sending">
                         <i class="bi bi-send-fill me-2"></i>Invia messaggio
                     </span>
+                    <!-- sending -->
                     <span *ngIf="sending">
                         <span class="contatti-spinner"></span>
                         Invio in corso...
@@ -59,4 +69,25 @@
 
         </div>
     </div>
+
+    <!-- Custom Modal (usa classi Bootstrap per lo stile, ma controllato solo con Angular) -->
+    <div *ngIf="showSuccess" class="modal-backdrop fade show" (click)="closeSuccess()"></div>
+
+    <div *ngIf="showSuccess" class="modal fade show" tabindex="-1" style="display: block;" (click)="closeSuccess()">
+        <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Messaggio inviato!</h5>
+                    <button type="button" class="btn-close" (click)="closeSuccess()" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ti risponderò al più presto. Grazie per avermi scritto.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="closeSuccess()">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
